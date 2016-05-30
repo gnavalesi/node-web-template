@@ -1,22 +1,18 @@
 // Begin: ExampleController
 /* global app */
 
-function ExampleController(ExampleService) {
-    this.show = false;
-    this.serviceMessage = ExampleService.getMessage();
-
-    return this;
+function ExampleController($scope, ExampleService) {
+    $scope.show = false;
+    $scope.serviceMessage = ExampleService.getMessage();
 }
 
-app.controller('ExampleController', ['ExampleService', ExampleController]); 
+app.controller('ExampleController', ['$scope', 'ExampleService', ExampleController]);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider) {
     $routeProvider.when('/example', {
         templateUrl: 'views/example.html',
         controller: 'ExampleController'
     });
-
-    //FOO
 }]);
 
 // End: ExampleController

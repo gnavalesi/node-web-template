@@ -5,13 +5,13 @@ function ExampleDirective() {
     return {
         restrict: 'A',
         scope: {
-            message: '=message'
+            message: '@'
         },
         template: 'Message: {{message}}'
     };
 }
 
-app.directive('exampleDirective', ExampleDirective); 
+app.directive('exampleDirective', ExampleDirective);
 
 
 // End: ExampleDirective
